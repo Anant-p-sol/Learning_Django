@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+</head>
+<body>
+    <h1>Hello world</h1>
+    <h2>My name is {{ name }}</h2>
+    <h2>My age is {{age }}</h2>
+    {% if is_active == True %}
+        <h2>List of hobbies</h2>
+        {% for hobbie in hobbies %}
+            <p>{{forloop.counter}}. {{ hobbie }}</p>
+        {% endfor %}
+        <h2>List of skill</h2>
+        {% for skill in skills %}
+            <p>{{forloop.counter0}}. {{ skill }}</p>
+        {% endfor %}
+        <h3>I am persuing {{education.degree}} in {{education.field}} from {{education.institution}}</h3>
+        <h3>Today's Date : {{today|date:"F j,Y"}}</h3>
+    {%endif%}
+    
+</body>
+</html>
