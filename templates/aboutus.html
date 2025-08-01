@@ -7,7 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'footer.css' %}" type="text/css">
-    <style>.main h1 {color:purple;}</style>
+    <style>.main h1 {color:purple;}
+    .home{
+      background-color: lightgreen;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;   
+    }
+    </style>
 </head>
 <body>
         <div class="header">
@@ -15,10 +27,10 @@
      </div>
 
      <div class="main">
-       <h1>HOME PAGE</a></h1>
-        <h1>ABOUT PAGE</a></h1>
+       <h1><a href="{% url 'home'%}">HOME PAGE</a></h1>
+       <h1><a href="{% url 'aboutus' %}">ABOUT PAGE</a></h1>
 
-        <P>welcome to About-us page</P>
+        <P class="home">welcome to About-us page</P>
      </div>
     
      <div class="footer">
