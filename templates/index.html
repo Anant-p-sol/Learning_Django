@@ -1,40 +1,28 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'footer.css' %}" type="text/css">
-    <style>.main h1 {color:blue;}
-    .home{
-      background-color: lightblue;
-      font-size: 20px;  
-      text-align: center;  
-      padding: 10px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      margin: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease;
-    }
-    </style>
-</head>
-<body>
-     <div class="header">
-        <h1>Header</h1>
-     </div>
+{% extends 'assets/main.html' %}
 
-     <div class="main">
-        <h1><a href="{% url 'home'%}">HOME PAGE</a></h1>
-       <h1><a href="{% url 'aboutus' %}">ABOUT PAGE</a></h1>
+{% block customStyle %}
 
-        <P class="home">welcome to home page</P>
-     </div>
-    
-     <div class="footer">
-        <h1>Footer</h1>
-     </div>
-</body>
-</html>
+<style>
+   .main h1 {color:blue;}
+   .home{
+   background-color: lightblue;
+   font-size: 20px;  
+   text-align: center;  
+   padding: 10px;
+   border: 2px solid #ccc;
+   border-radius: 5px;
+   margin: 20px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   transition: background-color 0.3s ease;
+   }
+</style>
+
+
+{% endblock %}
+
+{% block content %}
+
+   <P class="home">welcome to home page.....</P>
+
+{% endblock %}
+        

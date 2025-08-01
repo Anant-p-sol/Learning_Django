@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'header.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'footer.css' %}" type="text/css">
+    {% block customStyle %}
+
+
+    {% endblock %}
+
 </head>
 <body>
      <div class="header">
@@ -14,14 +19,16 @@
      </div>
 
      <div class="main">
-        <h1><a href="{% url 'home '%}">HOME PAGE</a></h1>
-        <h1><a href="{% url 'home '%}">ABOUT PAGE</a></h1>
+        <h1><a href="{% url 'home' %}">HOME PAGE</a></h1>
+        <h1><a href="{% url 'aboutus' %}">ABOUT PAGE</a></h1>
 
-        <P>welcome to home page</P>
+        {% block content %}
+
+        {% endblock %}
      </div>
     
      <div class="footer">
         <h1>Footer</h1>
      </div>
 </body>
-</html>
+</html> 
