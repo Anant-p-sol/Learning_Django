@@ -19,4 +19,9 @@ class GeneralInfoAdmin(admin.ModelAdmin):
         return False
     
     def has_delete_permission(self, request, obj=None):
-        return False                
+        return False
+
+    # show to change permission
+    readonly_fields = [
+        'email', 'phone'
+        ]
