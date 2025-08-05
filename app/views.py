@@ -14,8 +14,14 @@ def write_sql_quarys_to_file(file_path):
 def index(request): 
     #read                                        # ORM (Object-Relational Mapping) to fetch data from the database
     all_records = GeneralInfo.objects.all()      # ORM is a programing languagetechnique that allows devlopers to interact with 
-    print(all_records)                                # the database using the programming language's syntax instead of SQL queries.
+    for i in all_records:                        # the database using the programming language's syntax instead of SQL queries.
+        print(i.company_name, i.location, i.email, i.phone, i.open_hours)
+                                       
+    first_record = GeneralInfo.objects.first()  # Fetch the first record from the GeneralInfo model
+    print(first_record)
 
+    last_record = GeneralInfo.objects.last()    # Fetch the last record from the GeneralInfo model
+    print(last_record)
 
     file_path = 'sql_queries.txt'
     write_sql_quarys_to_file(file_path)  # Write SQL queries to a file
