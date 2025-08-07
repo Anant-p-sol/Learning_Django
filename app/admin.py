@@ -1,7 +1,11 @@
 from django.contrib import admin
 
 # Register your models here.
-from app.models import GeneralInfo,Service,Testinomial
+from app.models import (GeneralInfo,
+                        Service,
+                        Testinomial,
+                        FrequentlyAskedQuestion
+                        )
 
 @admin.register(GeneralInfo)
 class GeneralInfoAdmin(admin.ModelAdmin):
@@ -51,3 +55,15 @@ class Testinomial(admin.ModelAdmin):
         return "*" * obj.rating
     
     Display_star.short_description = "rating"
+
+
+@admin.register(FrequentlyAskedQuestion)
+class FrequentlyAskedQuestionAdmin(admin.ModelAdmin):
+    list_display = [
+        'question', 'answer'
+    ]
+
+    search_fields = [
+        'question',
+        'answer'
+    ]
