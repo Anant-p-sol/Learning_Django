@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.models import GeneralInfo,Service
+from app.models import GeneralInfo,Service,Testinomial
 
 
 # Create your views here.
@@ -7,6 +7,8 @@ def index(request):
     general_info = GeneralInfo.objects.first()  # Get the first GeneralInfo object
     
     services = Service.objects.all()
+
+    testinomials = Testinomial.objects.all()
 
 
     context = {
@@ -21,9 +23,11 @@ def index(request):
         'instagram_url': general_info.instagram_url ,
         'linkedin_url': general_info.linkedin_url ,
 
-        "services" : services
+        "services" : services,
+
+        "testinomials" : testinomials,
     }
 
-    print(f"general_info : {context}")
+    
 
     return render(request,"index.html", context)

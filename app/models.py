@@ -18,8 +18,19 @@ class GeneralInfo(models.Model):
     
 class Service(models.Model):
     icon = models.CharField(max_length = 50, blank=True , null=True)
-    tittle = models.CharField(max_length=255,unique=True)
+    title = models.CharField(max_length=255,unique=True)
     description = models.TextField()
 
-def __str__(self):
-    return self.tittle
+    def __str__(self):
+        return self.title
+
+class Testinomial(models.Model):
+    user_name = models.CharField(max_length=50,unique=True)
+    user_image = models.CharField(max_length = 255, blank=True, null=True)
+    user_role = models.CharField(max_length=150)
+    RATING_CHOICES = [(i, str(i)) for i in range(1, 6)]
+
+    rating = models.IntegerField(choices=RATING_CHOICES, blank=True, null=True)
+    rivew = models.TextField()
+    def __str__(self):
+        return f"{self.user_name} - {self.user_role}"

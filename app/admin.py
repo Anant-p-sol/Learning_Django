@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from app.models import GeneralInfo,Service
+from app.models import GeneralInfo,Service,Testinomial
 
 @admin.register(GeneralInfo)
 class GeneralInfoAdmin(admin.ModelAdmin):
@@ -30,10 +30,24 @@ class GeneralInfoAdmin(admin.ModelAdmin):
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = [
-        'tittle','description'
+        'title','description'
     ] 
 
     search_fields = [
-        'tittle',
+        'title',
         'description'
     ]
+
+
+@admin.register(Testinomial)
+class Testinomial(admin.ModelAdmin):
+    list_display = [
+        "user_name",
+        "user_role",
+        "Display_star",
+    ] 
+
+    def Display_star(self,obj):
+        return "*" * obj.rating
+    
+    Display_star.short_description = "rating"
