@@ -124,6 +124,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'), 
  ] # Directory for custom static files
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'anant372003@gmail.com' # Replace with your email address
+EMAIL_HOST_PASSWORD = 'mlwqrkboeurxfhin'  # Replace with your email password
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
